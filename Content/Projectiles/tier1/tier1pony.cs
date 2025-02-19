@@ -247,7 +247,7 @@ namespace horsemod.Content.Projectiles.tier1
                 {
                     // The immediate range around the target (so it doesn't latch onto it when close)
                     Vector2 direction = targetCenter - Projectile.Center;// + new Vector2(Projectile.width/2, Projectile.height/2);
-                    Main.NewText("dash");
+                    //Main.NewText("dash");
                     direction.Normalize();
                     direction *= speed;
 

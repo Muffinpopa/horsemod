@@ -14,7 +14,7 @@ Projectiles: {
 
 Buffs: {
 	tier1buff: {
-		DisplayName: tier1buff
-		Description: Mods.horsemod.Buffs.tier1buff.Description
+		DisplayName: Tier 1 Horse
+		Description: Summons a mechanical pony to fight for you
 	}
 }
