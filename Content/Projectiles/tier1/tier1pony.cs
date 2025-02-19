@@ -70,13 +70,20 @@ namespace horsemod.Content.Projectiles.tier1
                 if (++Projectile.frame >= Main.projFrames[Projectile.type])
                     Projectile.frame = 0;
             }
-            if (Projectile.velocity.X < 0 && distanceFromTarget < 40f)
+
+            if (Projectile.velocity.X < 1)
             {
                 Projectile.spriteDirection = 1;
+              //  Main.NewText("sprite direction is " + Projectile.spriteDirection);
+            }
+            else if (Projectile.velocity.X > -1)
+            {
+                Projectile.spriteDirection = -1;
+             //   Main.NewText("sprite direction is " + Projectile.spriteDirection);
             }
             else
             {
-                Projectile.spriteDirection = -1;
+               // Main.NewText("sprite direction is N/A");
             }
         }
 
