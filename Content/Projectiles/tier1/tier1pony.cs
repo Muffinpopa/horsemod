@@ -43,12 +43,13 @@ namespace horsemod.Content.Projectiles.tier1
             Projectile.penetrate = -1; // Needed so the minion doesn't despawn on collision with enemies or tiles
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 10;
+            Projectile.scale = 0.8f;
         }
 
 
         public override bool MinionContactDamage()
         {
-            return true;
+            return false;
         }
 
         public override void AI()
@@ -63,7 +64,7 @@ namespace horsemod.Content.Projectiles.tier1
             GeneralBehavior(owner, out Vector2 vectorToIdlePosition, out float distanceToIdlePosition);
             SearchForTargets(owner, out bool foundTarget, out float distanceFromTarget, out Vector2 targetCenter);
             Movement(foundTarget, distanceFromTarget, targetCenter, distanceToIdlePosition, vectorToIdlePosition);
-            if (++Projectile.frameCounter >= 10)
+            if (++Projectile.frameCounter >= 5)
             {
                 Projectile.frameCounter = 0;
                 // Or more compactly Projectile.frame = ++Projectile.frame % Main.projFrames[Projectile.type];
@@ -244,14 +245,19 @@ namespace horsemod.Content.Projectiles.tier1
                         int v = (int)(Projectile.damage * 1.5);
                         Projectile.NewProjectile(source, Projectile.Center /*- new Vector2(Projectile.width/2, 0)*/, (targetCenter - Projectile.Center) / 15, ModContent.ProjectileType<tier1bullet>(), v, 2);
                     }
-                    Vector2 direction = targetCenter - Projectile.Center - new Vector2(0, 200 + Projectile.minionPos * 50);
+                    int min = Projectile.minionPos - 1;
+                    if (min % 2 != 0)
+                    {
+                        min *= -1;
+                    }
+                    Vector2 direction = targetCenter - Projectile.Center - new Vector2(-50 * min, 200);
                     direction.Normalize();
                     direction *= speed;
 
                     Projectile.velocity = (Projectile.velocity * (inertia - 1) + direction) / inertia;
                 }
-                else if (/*distanceFromTarget > Lowerbound &&*/ distanceFromTarget < Upperbound)
-                {
+              //  else if (/*distanceFromTarget > Lowerbound &&*/ distanceFromTarget < Upperbound)
+               /* {
                     // The immediate range around the target (so it doesn't latch onto it when close)
                     Vector2 direction = targetCenter - Projectile.Center;// + new Vector2(Projectile.width/2, Projectile.height/2);
                     //Main.NewText("dash");
@@ -259,7 +265,7 @@ namespace horsemod.Content.Projectiles.tier1
                     direction *= speed;
 
                     Projectile.velocity = (Projectile.velocity * (inertia - 1) + direction) / inertia;
-                }
+                }*/
             }
             else
             {
