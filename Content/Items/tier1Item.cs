@@ -45,7 +45,6 @@ namespace horsemod.Content.Items
         {
             // Here we add a tooltip to the gel to let the player know what will happen
             tooltips.Add(new(Mod, "Tier", "[Tier1]"));
-            tooltips.Add(new(Mod, "Right-click", "Right-click with this item to change its attack type!"));
         }
 
         public override void AddRecipes()

@@ -5,6 +5,11 @@ Items: {
 		DisplayName: Droid Bacon
 		Tooltip: Summons a mechanical pony to fight for you
 	}
+
+	Tier1_Mount_Item: {
+		Tooltip: ""
+		DisplayName: Tier1_ Mount_ Item
+	}
 }
 
 Projectiles: {
@@ -16,5 +21,10 @@ Buffs: {
 	tier1buff: {
 		DisplayName: Tier 1 Horse
 		Description: Summons a mechanical pony to fight for you
+	}
+
+	Tier1_Mount_Buff: {
+		Description: Mods.horsemod.Buffs.Tier1_Mount_Buff.Description
+		DisplayName: Tier1_ Mount_ Buff
 	}
 }
