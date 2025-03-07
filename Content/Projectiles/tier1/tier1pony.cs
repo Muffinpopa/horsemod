@@ -44,9 +44,10 @@ namespace horsemod.Content.Projectiles.tier1
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 10;
             Projectile.scale = 0.8f;
+            Projectile.light = 0.5f;
         }
 
-
+        
         public override bool MinionContactDamage()
         {
             return false;

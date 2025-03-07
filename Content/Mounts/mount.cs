@@ -20,15 +20,15 @@ namespace horsemod.Content.Mounts
 
 		public override void SetStaticDefaults() {
 			// Movement
-			MountData.jumpHeight = 0; // How high the mount can jump.
-			MountData.acceleration = 5; // The rate at which the mount speeds up.
-			MountData.jumpSpeed = 0f; // The rate at which the player and mount ascend towards (negative y velocity) the jump height when the jump button is pressed.
+			MountData.jumpHeight = 25; // How high the mount can jump.
+			MountData.acceleration = 1; // The rate at which the mount speeds up.
+			MountData.jumpSpeed = 5f; // The rate at which the player and mount ascend towards (negative y velocity) the jump height when the jump button is pressed.
 			MountData.blockExtraJumps = false; // Determines whether or not you can use a double jump (like cloud in a bottle) while in the mount.
-			MountData.constantJump = false; // Allows you to hold the jump button down.
-			MountData.heightBoost = 20; // Height between the mount and the ground
+			MountData.constantJump = true; // Allows you to hold the jump button down.
+			MountData.heightBoost = 30; // Height between the mount and the ground
 			MountData.fallDamage = 1f; // Fall damage multiplier.
 			MountData.runSpeed = 5f; // The speed of the mount
-			MountData.dashSpeed = 5f; // The speed the mount moves when in the state of dashing.
+			//MountData.dashSpeed = 5f; // The speed the mount moves when in the state of dashing.
 			MountData.flightTimeMax = 0; // The amount of time in frames a mount can be in the state of flying.
 //            MountData.abilityChargeMax = 20;
 	//		MountData.abilityDuration = 200;
@@ -45,7 +45,7 @@ namespace horsemod.Content.Mounts
 			MountData.totalFrames = 16; // Amount of animation frames for the mount
 			MountData.playerYOffsets = Enumerable.Repeat(20, MountData.totalFrames).ToArray(); // Fills an array with values for less repeating code
 			MountData.xOffset = 13;
-			MountData.yOffset = -12;
+			MountData.yOffset = 0;
 			MountData.playerHeadOffset = 22;
 			MountData.bodyFrame = 3;
 			// Standing
