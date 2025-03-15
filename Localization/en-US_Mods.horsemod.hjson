@@ -15,6 +15,8 @@ Items: {
 Projectiles: {
 	tier1pony.DisplayName: tier1pony
 	tier1bullet.DisplayName: tier1bullet
+	tier2laser.DisplayName: tier2laser
+	tier2pony.DisplayName: tier2pony
 }
 
 Buffs: {

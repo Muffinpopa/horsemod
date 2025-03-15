@@ -5,12 +5,12 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace horsemod.Content.Projectiles.tier1
+namespace horsemod.Content.Projectiles.tier2
 {
     // This is a basic Projectile template.
     // Please see tModLoader's ExampleMod for every other example:
     // https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
-    public class tier1pony : ModProjectile
+    public class tier2pony : ModProjectile
     {
         // The Display Name and Tooltip of this Projectile can be edited in the 'Localization/en-US_Mods.horsemod.hjson' file.
         public override void SetStaticDefaults()
@@ -244,7 +244,7 @@ namespace horsemod.Content.Projectiles.tier1
                         // j = 0;
                         projtimer = 0;
                         int v = (int)(Projectile.damage * 1.5);
-                        Projectile.NewProjectile(source, Projectile.Center /*- new Vector2(Projectile.width/2, 0)*/, (targetCenter - Projectile.Center) / 15, ModContent.ProjectileType<tier1bullet>(), v, 2);
+                        Projectile.NewProjectile(source, Projectile.Center /*- new Vector2(Projectile.width/2, 0)*/, (targetCenter - Projectile.Center) / 15, ModContent.ProjectileType<tier2laser>(), v, 2);
                     }
                     float min = Projectile.minionPos;
                     if (min % 2 != 0)
