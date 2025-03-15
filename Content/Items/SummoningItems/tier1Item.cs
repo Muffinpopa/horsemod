@@ -6,7 +6,7 @@ using horsemod.Content.Buffs;
 using horsemod.Content.Projectiles.tier1;
 using System.Collections.Generic;
 
-namespace horsemod.Content.Items
+namespace horsemod.Content.Items.SummoningItems
 {
     // This is a basic item template.
     // Please see tModLoader's ExampleMod for every other example:

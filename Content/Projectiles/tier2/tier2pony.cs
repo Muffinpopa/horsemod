@@ -56,6 +56,15 @@ namespace horsemod.Content.Projectiles.tier2
         public override void AI()
         {
             Player owner = Main.player[Projectile.owner];
+            if(owner.HasBuff(ModContent.BuffType<tier2buff>()))
+            {
+                Projectile.timeLeft++;
+            }
+            else
+            {
+                Projectile.Kill();
+            }
+
 
             if (!CheckActive(owner))
             {
@@ -244,7 +253,7 @@ namespace horsemod.Content.Projectiles.tier2
                         // j = 0;
                         projtimer = 0;
                         int v = (int)(Projectile.damage * 1.5);
-                        Projectile.NewProjectile(source, Projectile.Center /*- new Vector2(Projectile.width/2, 0)*/, (targetCenter - Projectile.Center) / 15, ModContent.ProjectileType<tier2laser>(), v, 2);
+                        Projectile.NewProjectile(source, Projectile.Center, (targetCenter - Projectile.Center) / 15, ModContent.ProjectileType<tier2laser>(), v, 2);
                     }
                     float min = Projectile.minionPos;
                     if (min % 2 != 0)

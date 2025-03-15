@@ -30,6 +30,7 @@ namespace horsemod.Content.Projectiles.tier2
             Projectile.friendly = true;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 10;
+            Projectile.extraUpdates = 1;
         }
 
         public override void AI()
@@ -42,6 +43,7 @@ namespace horsemod.Content.Projectiles.tier2
                 if (++Projectile.frame >= Main.projFrames[Projectile.type])
                     Projectile.frame = 0;
             }
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Electric, Projectile.velocity.X * 0f, Projectile.velocity.Y * 0);
         }
 
 

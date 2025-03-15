@@ -10,6 +10,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Tier1_ Mount_ Item
 	}
+
+	tier2Item: {
+		DisplayName: tier2 Item
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -28,5 +33,10 @@ Buffs: {
 	Tier1_Mount_Buff: {
 		Description: Mods.horsemod.Buffs.Tier1_Mount_Buff.Description
 		DisplayName: Tier1_ Mount_ Buff
+	}
+
+	tier2buff: {
+		DisplayName: tier2buff
+		Description: Mods.horsemod.Buffs.tier2buff.Description
 	}
 }
